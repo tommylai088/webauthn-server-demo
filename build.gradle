@@ -1,0 +1,29 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.1'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.example.webauthn.server.demo'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// For decode
+	implementation 'org.bitbucket.b_c:jose4j:0.7.5'
+	implementation 'com.google.code.gson:gson:2.8.9'
+	implementation 'com.google.iot.cbor:cbor:0.01.02'
+	// For Test
+	implementation 'com.webauthn4j:webauthn4j-core:0.20.0.RELEASE'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
